@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxbadmanplayer.HelloController">
+    <children>
+        <BorderPane layoutX="503.0" layoutY="302.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+
+                <MediaView fx:id="mediaView" fitHeight="450.0" fitWidth="700.0" BorderPane.alignment="CENTER" />
+
+            </center>
+            <bottom>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Slider fx:id="timeSlider" majorTickUnit="10.0" showTickLabels="true" showTickMarks="true">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </Slider>
+                  <ProgressBar fx:id="progress" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="9.0" prefWidth="1000.0" progress="0.0" />
+                        <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="100.0" prefWidth="500.0" spacing="12.0">
+                            <children>
+
+                                <Button fx:id="favBtn" mnemonicParsing="false" />
+                                <Button fx:id="backwardBtn" mnemonicParsing="false" onAction="#backwardBtnClick" />
+                                <Button fx:id="playbtn" mnemonicParsing="false" onAction="#play" />
+                                <Button fx:id="forwardBtn" mnemonicParsing="false" onAction="#forwardBtnClick" />
+                                <Button fx:id="volBtn" mnemonicParsing="false" onAction="#volume" />
+                                <Slider fx:id="volSlider" max="1.0" maxHeight="1.0" maxWidth="40.0" min="0.10" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </bottom>
+            <top>
+                <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#openSongMenu" text="Open Song" />
+                                <MenuItem mnemonicParsing="false" onAction="#exitSong" text="Exit Song" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Tools">
+                            <items>
+
+                                <MenuItem mnemonicParsing="false" onAction="#play" text="Play/Pause" />
+                                <MenuItem mnemonicParsing="false" onAction="#forwardBtnClick" text="Forward" />
+                                <MenuItem mnemonicParsing="false" onAction="#backwardBtnClick" text="Backward" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+        </BorderPane>
+    </children>
+</AnchorPane>
